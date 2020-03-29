@@ -255,7 +255,7 @@ STDMETHODIMP CCmdOpen::InvokeCommand( LPCMINVOKECOMMANDINFO pici )
 		else
 		{
 			TCHAR szParams[MAX_PATH << 1];
-			wnsprintf(szParams, countof(szParams), TEXT("/s /k pushd \"%s\""), lpszPath);
+			wnsprintf(szParams, countof(szParams), TEXT("-new_console:z /s /k pushd \"%s\""), lpszPath);
 			ShellExecute(pici->hwnd, TEXT("runas"), szCommand, szParams, lpszPath, SW_SHOWNORMAL);
 		}
 	}
